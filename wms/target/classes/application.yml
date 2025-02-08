@@ -8,8 +8,14 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: Aa123456
+  neo4j:
+    uri: bolt://127.0.0.1:7473
+    authentication:
+      username: neo4j
+      password: Aa123456
+
 
 
 Logging:
   level:
-    com.wms: debug
+    com.wms: error
