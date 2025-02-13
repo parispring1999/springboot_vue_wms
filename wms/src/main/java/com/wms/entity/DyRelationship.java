@@ -9,7 +9,8 @@ import org.springframework.data.neo4j.core.schema.*;
 @RelationshipProperties
 public class DyRelationship {
     @Id
-    Long id;
+    @GeneratedValue
+    Long id0;
 
     @TargetNode
     private  EacNode eacNode;
