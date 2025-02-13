@@ -1,5 +1,6 @@
 package com.wms.controller;
 
+import com.wms.entity.DyRelationship;
 import com.wms.entity.EacNode;
 import com.wms.entity.TNode;
 import com.wms.service.repo.reposervice.TNodeService;
@@ -23,16 +24,6 @@ public class TNodeController {
     @GetMapping("/get_t_node")
     public TNode getTNode(@RequestParam("id")String id){
         return tNodeService.getTNodeById(id);
-    }
-
-    @GetMapping("/get_relationship")
-    public List<PathValue> getRelationship(@RequestParam("id")String id){
-        return tNodeService.getRelationshipById(id);
-    }
-
-    @GetMapping("/get_related_node")
-    public List<EacNode> getRelatedNode(@RequestParam("id")String id){
-        return tNodeService.getRelatedNodeById(id);
     }
 
     @PostMapping("/add_t_node")

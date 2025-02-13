@@ -1,5 +1,6 @@
 package com.wms.service.repo.reposervice;
 
+import com.wms.entity.DyRelationship;
 import com.wms.entity.EacNode;
 import com.wms.entity.TNode;
 
@@ -21,12 +22,6 @@ public class TNodeService {
 
     public TNode getTNodeById(String id){
         return tNodeRepository.findTNodeById(id);
-    }
-    public List<PathValue> getRelationshipById(String id){
-        return tNodeRepository.findRelationshipById(id);
-    }
-    public List<EacNode> getRelatedNodeById(String id){
-        return tNodeRepository.findRelatedNodeById(id);
     }
 
     public TNode addTNode(String id){
