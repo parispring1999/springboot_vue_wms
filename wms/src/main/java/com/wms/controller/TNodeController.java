@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/tnode")
+@RequestMapping("/t_node")
 public class TNodeController {
     @Autowired
     private TNodeService tNodeService;

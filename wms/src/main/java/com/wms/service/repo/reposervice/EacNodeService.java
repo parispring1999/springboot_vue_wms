@@ -15,7 +15,7 @@ public class EacNodeService {
     @Autowired
     private EacNodeRepository eacNodeRepository;
 
-    public List<EacNode> getAllTNode(){
+    public List<EacNode> getAllEacNode(){
         return eacNodeRepository.findAll();
     }
 
