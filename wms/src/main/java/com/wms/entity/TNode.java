@@ -11,6 +11,7 @@ import java.util.List;
 @Node("T")
 public class TNode {
     @Id
+    @GeneratedValue
     Long id0;
 
     @Property(name = "id")
