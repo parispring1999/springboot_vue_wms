@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.TNodeQuaMapper">
+
+    <select id="pageCC" resultType="com.wms.entity.TNodeQua">
+        select * from tnode ${ew.customSqlSegment}
+    </select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.TNodeQua">
+        <id column="t" property="t" />
+        <result column="rs" property="rs" />
+        <result column="sa" property="sa" />
+        <result column="lia" property="lia" />
+        <result column="pc" property="pc" />
+        <result column="pi" property="pi" />
+        <result column="pa" property="pa" />
+        <result column="av" property="av" />
+        <result column="pr" property="pr" />
+        <result column="ui" property="ui" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        t, rs, sa, lia, pc, pi, pa, av, pr, ui
+    </sql>
+
+</mapper>
