@@ -46,7 +46,7 @@ public class TNodeQuaController {
 
         LambdaQueryWrapper<TNodeQua> lambdaQueryWrapper = new LambdaQueryWrapper();
         if(StringUtils.isNotBlank(t) && !"null".equals(t)){
-            lambdaQueryWrapper.like(TNodeQua::getName,t);
+            lambdaQueryWrapper.like(TNodeQua::getT,t);
         }
 
         IPage result = tNodeQuaService.pageCC(page,lambdaQueryWrapper);
