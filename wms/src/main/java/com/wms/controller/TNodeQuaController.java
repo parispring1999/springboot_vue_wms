@@ -31,8 +31,8 @@ public class TNodeQuaController {
     }
     //删除
     @GetMapping("/del")
-    public Result del(@RequestParam String id){
-        return tNodeQuaService.removeById(id)?Result.suc():Result.fail();
+    public Result del(@RequestParam String t){
+        return tNodeQuaService.removeById(t)?Result.suc():Result.fail();
     }
 
     @PostMapping("/listPage")

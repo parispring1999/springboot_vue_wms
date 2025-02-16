@@ -3,7 +3,7 @@
 <mapper namespace="com.wms.mapper.TNodeQuaMapper">
 
     <select id="pageCC" resultType="com.wms.entity.TNodeQua">
-        select * from tnode ${ew.customSqlSegment}
+        select * from t_node_qua ${ew.customSqlSegment}
     </select>
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.wms.entity.TNodeQua">

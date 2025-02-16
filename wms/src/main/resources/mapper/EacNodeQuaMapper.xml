@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wms.mapper.EacNodeQuaMapper">
+
+    <!--<select id="pageCC" resultType="com.wms.entity.EacNodeQua">
+        select * from eac_node_qua ${ew.customSqlSegment}
+    </select>-->
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.wms.entity.EacNodeQua">
+        <id column="eac" property="eac" />
+        <result column="cp" property="cp" />
+        <result column="st" property="st" />
+        <result column="nb" property="nb" />
+        <result column="ot" property="ot" />
+        <result column="bi" property="bi" />
+        <result column="rc" property="rc" />
+        <result column="ri" property="ri" />
+        <result column="ra" property="ra" />
+        <result column="ia" property="ia" />
+        <result column="vu" property="vu" />
+    </resultMap>
+
+    <select id="pageCC" resultMap="BaseResultMap">
+        SELECT
+        eac,
+        cp,
+        st,
+        nb,
+        ot,
+        bi,
+        rc,
+        ri,
+        ra,
+        ia,
+        <if test="dynamicKey != null and dynamicKey != ''">
+            JSON_EXTRACT(vu, CONCAT('$.', #{dynamicKey}))
+        </if>
+        <!-- 如果 dynamicKey 为空，则直接查询 vu 字段 -->
+        <if test="dynamicKey == null or dynamicKey == ''">
+            vu
+        </if>
+        AS vu
+        FROM
+        eac_node_qua ${ew.customSqlSegment}
+    </select>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        eac, cp, st, nb, ot, bi, rc, ri, ra, ia, vu
+    </sql>
+
+</mapper>
